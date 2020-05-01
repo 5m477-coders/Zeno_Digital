@@ -1,0 +1,21 @@
+The python libraries used include:
+flask
+sqlite
+datetime
+pandas
+
+readfile.py
+the py script connects to an existing SQLite database, if the database isnt found it creates one.
+after the connection has been made successfully, it checks for an existing LOG table,if one isnt found it creates one.
+After then the csv file (task_file.csv) is read and converted into a dataframe by using pandas library and the dataframe is then inserted into the created databse.
+
+server.py:
+this py script starts a web application with its main end point shows the data by collecting them from the database
+The HTML page displays the data and is generated dynamically with the help of a py library called JINJA2 template
+A log is saved into the database table "logs" to the web application any time 
+any request is made
+
+Instructions
+cd in the folder, then run readfile.py
+then run server.py then open http://0.0.0.0:5000/ on your default browser
+The page shows the data in a table. Any time the page is accessed it will create another log entry which can be seen by addind /logs to the local IP (http://0.0.0.0:5000/logs)
